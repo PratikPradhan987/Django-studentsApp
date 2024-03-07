@@ -5,7 +5,8 @@ from vege.models import *
 # Create your views here.
 def home(request):
     queryset = Receipe.objects.all()
-    return render(request, 'index.html', {'queryset': queryset})
+    context = {'queryset': queryset}
+    return render(request, 'index.html',context)
 
 def detail(request, student_id):
     return HttpResponse("You're looking at question %s." % student_id)

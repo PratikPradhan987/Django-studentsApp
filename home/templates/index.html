@@ -12,6 +12,9 @@
     {% for question in queryset %}
         <li><a href="/polls/{{ question.id }}/">{{ question.receipe_name }}</a></li>
         <li><a href="/polls/{{ question.id }}/">{{ question.receipe_description }}</a></li>
+        <br>
+        <img src="/media/{{question.receipe_image}}" alt="My image">
+
     {% endfor %}
     </ul>
 {% else %}
