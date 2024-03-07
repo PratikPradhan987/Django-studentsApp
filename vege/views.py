@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
 from .models import *
 # Create your views here.
 def receipes(request):
@@ -12,5 +12,6 @@ def receipes(request):
             receipe_description = data['receipe_description'],
             receipe_image = receipe_image,            
             )
+        return redirect('/')
 
     return render(request,'receipes.html')

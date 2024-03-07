@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Student
-
+from vege.models import *
 # Create your views here.
 def home(request):
-    return render(request, 'index.html')
+    queryset = Receipe.objects.all()
+    return render(request, 'index.html', {'queryset': queryset})
 
 def detail(request, student_id):
     return HttpResponse("You're looking at question %s." % student_id)
