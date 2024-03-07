@@ -15,3 +15,9 @@ def receipes(request):
         return redirect('/')
 
     return render(request,'receipes.html')
+    
+def delete_receipe(request,id):
+    print(id)
+    queryset = Receipe.objects.get(id = id)
+    queryset.delete()
+    return redirect('/')

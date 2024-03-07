@@ -13,8 +13,8 @@
         <li><a href="/polls/{{ question.id }}/">{{ question.receipe_name }}</a></li>
         <li><a href="/polls/{{ question.id }}/">{{ question.receipe_description }}</a></li>
         <br>
-        <img src="/media/{{question.receipe_image}}" alt="My image">
-
+        <img src="/media/{{question.receipe_image}}" style="height: 200px;" alt="My image">
+        <a href="delete_receipe/{{question.id}}">delete</a>
     {% endfor %}
     </ul>
 {% else %}
