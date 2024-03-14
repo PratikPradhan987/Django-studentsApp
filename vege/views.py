@@ -1,5 +1,4 @@
 from django.shortcuts import render ,redirect
-<<<<<<< HEAD
 import requests
 from .models import *
 from django.contrib.auth.models import User
@@ -9,10 +8,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def hug(request):
-    url = 'https://pokeapi.co/api/v2/pokemon/ditto'
+    url = 'https://pokeapi.co/api/v2/pokemon/1'
     r = requests.get(url)
     fish = r.json()
-    print(fish)
+    # print(fish)
     # return fish
     context = {'queryset': fish}
     return render(request,'hug.html',context)
@@ -62,12 +61,10 @@ def sign_up(request):
         # Render the same page to display the success message
         return render(request, 'sign_up.html')
     return render(request, 'sign_up.html')
-=======
 from django.http import HttpResponse
 from .models import *
 def manish(request):
     return HttpResponse("hello")
->>>>>>> 6be6f25c817e2ebc73abefe046515d9e48372d62
 
 def receipes(request):
     if request.method == 'POST':
