@@ -8,7 +8,7 @@ class Student(models.Model):
     phone = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     def __str__(self):
-        return self.phone
+        return self.email
     
 
 class Choice(models.Model):

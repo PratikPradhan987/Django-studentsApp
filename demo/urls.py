@@ -21,10 +21,17 @@ from vege.views import *
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from .views import index
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home),
+    # path("", home),
+    path('', index, name='index'),
+    path('sign_up/', sign_up, name='sign_up'),   
+    path('hug/', hug, name='sign_up'),   
+
+    path('login/', login_page, name='sign_up'),   
+    path('logout/', logout_page, name='sign_up'),   
+
     path("receipes/", receipes , name="receipes"),
     path("delete_receipe/<id>/", delete_receipe , name="delete_receipe"),
     path("update_receipe/<id>/", update_receipe , name="update_receipe"),

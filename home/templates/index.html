@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{queryset}}
-    {% if queryset %}
-    <ul>
-    {% for question in queryset %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.receipe_name }}</a></li>
-        <li><a href="/polls/{{ question.id }}/">{{ question.receipe_description }}</a></li>
-        <br>
-        <img src="/media/{{question.receipe_image}}" style="height: 200px;" alt="My image">
-        <a href="delete_receipe/{{question.id}}">delete</a>
-        <a href="update_receipe/{{question.id}}">update</a>
+<!-- templates/index.html -->
 
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-</body>
-</html>
+{% extends "_base.html" %}
+
+{% block content %}
+<section>
+  <div class="flex justify-between px-10 py-5 text-4xl">
+    <div>logo</div>
+    <div class="flex gap-5">
+      <div>
+        <button class="btn btn-active btn-neutral">sign up</button>
+      </div>
+      <div>
+        <button class="btn btn-active btn-neutral">login up</button>
+      </div>
+      <a href="/logout">logout</a>
+    </div>
+  </div>
+</section>
+
+
+
+  <h1 class="text-3xl text-green-800">Django + Tailwind CSS + Flowbite</h1>
+  <p class="font-bold text-4xl text-green-300">hello world</p>
+  {{queryset}}
+{% endblock content %}

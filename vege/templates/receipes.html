@@ -1,14 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "_base.html" %}
+
+{% block content %}
     
 <div>
-    <form method="post" enctype="multipart/form-data">
+
+  <div class="avatar">
+    <div class="w-24 rounded">
+      <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+    </div>
+  </div>
+
+  <form action="" class="p-4 w-full">
+    <label for="">search food</label>
+    <input type="text" name="search_re">
+    <button type="submit">search</button>
+    <button class="btn">Button</button>
+
+  </form>
+    <form method="post" enctype="multipart/form-data" class="w-full p-10 gap-2 flex flex-grow">
       {% csrf_token %}
         <div class="form-group">
           <label for="exampleInputEmail1">receipe_name</label>
@@ -26,5 +35,4 @@
       </form>
 </div>
 
-</body>
-</html>
+{% endblock content %}
